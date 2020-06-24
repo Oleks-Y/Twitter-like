@@ -4,9 +4,25 @@
 {% endblock title %}
 this is amazing
 {% block content %}
-  Welcome to tweetme2
+<div class="row text-center">
+    <div class="col">
+        <h1>Welcome to tweetme2</h1>
+    </div>
+</div>
+    <div class="row mb-3">
+        <div class="col-md-4 mx-auto col-10">
+            <form class="form" method="POST" action="/create-tweet">
+            {% csrf_token %}
+            <input type="hidden" value="/" name="next"/>
+            <textarea class="form-control" name="content" placeholder="Your tweet tatata"></textarea>
+            <button class="btn btn-primary" type="submit">Tweet</button>
 
-  <div id="tweets">
+            </form>
+        </div>
+    </div>
+
+
+  <div class="row " id="tweets">
       Loading ...
   </div>
 
@@ -35,8 +51,8 @@ this is amazing
 
 
       function formatTweetElement(tweet){        
-        var formatedTweet = "<div class='mb-4 tweet' id='tweet-'"+tweet.id+"><h1>"+tweet.id + 
-            "</h1>" + "<p>" + tweet.content + 
+        var formatedTweet = "<div class='col-12 col-md-10 mx-auto  border-bottom border-top py-3 tweet' id='tweet-'"+tweet.id+">"
+            + "<p>" + tweet.content + 
                 "</p><div class='btn-group'>"+LikeBtn(tweet)+
                 '</div></div>'
         return formatedTweet

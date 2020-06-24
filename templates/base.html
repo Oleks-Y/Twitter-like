@@ -11,9 +11,11 @@
     <title>Tweetme 2 {% block title %}{% endblock title %} </title>
   </head>
   <body>
-    {% block content %}
-    
+    {% include "components/navbar.html" %}
+    <div class="container">    
+    {% block content %}    
     {% endblock content %}
+     </div>
 
     <!--DRY Don`t repeat yourself-->
     <!-- Optional JavaScript -->
