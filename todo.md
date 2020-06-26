@@ -1,5 +1,6 @@
 
 1. Users
+-> User Permissions
 -> Register
 -> Login
 -> Logout
